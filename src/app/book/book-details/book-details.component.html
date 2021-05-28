@@ -1,0 +1,103 @@
+<div class="m-2 col-10">
+    <form class="form" [formGroup]="bookForm" (ngSubmit)="submitForm()">
+        <div class="form-group">
+            <label>ISBN:</label>
+            <input pInputText type="text" formControlName="isbn" class="form-control"  #isbnCtrl>
+        </div>
+
+        <div class="form-group">
+            <label>Title:</label>
+            <input pInputText type="text" formControlName="title" class="form-control">
+            <div class="invalid" *ngIf="bookForm.get('title').errors?.title">{{bookForm.get('title').errors?.title.message}}</div>
+        </div>
+
+        <div class="form-group">
+            <label>Subtitle:</label>
+            <input pInputText type="text" formControlName="subtitle" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Rating:</label>
+            <input type="text" formControlName="rating" class="form-control" #ratingControl>
+            <div class="invalid" *ngIf="ratingControl.dirty">Dirty</div>
+        </div>
+
+        <!-- <div class="form-group">
+            <label>Published:</label>
+            <input type="date" formControlName="published" useValueAsDate class="form-control">
+        </div> -->
+
+        <button type="button" class="btn btn-secondary m-1"  [style.max-width.px]="180"  (click)="addAuthor()">Add new Author</button>
+
+       <div formArrayName="authors">
+            <input type="text" *ngFor="let a of authors; index as i" [formControlName]="i" class="m-2">
+       </div>           
+       
+        <button type="button" class="btn btn-secondary m-1"  [style.max-width.px]="180"  (click)="addSeller()">Add new Seller</button>
+
+        <div *ngIf="book?.sellers">
+            <!-- Fejléc -->
+            <div class="row  gy-1" >   <!--  nem biztos hogy a jsonban van ilyen property -->
+                <div class="col-2 m-1">
+                    Name
+                </div>
+                <div class="col-2 m-1">
+                    Address
+                </div>
+                <div class="col-2 m-1">
+                    Quantity
+                </div>
+                <div class="col-2 m-1">
+                    Age
+                </div>
+                <div class="col-2 m-1">
+                    BirthYear
+                </div>
+                <div class="col-2 m-1">
+                    &nbsp;
+                </div>           
+            </div>
+
+            <div formArrayName="sellers" *ngFor="let seller of sellers; let i = index;">    <!-- a sellers FormArray-n mint FormControll elemeket iterálunk végig -->
+                <div [formGroupName]="i" class="row gy-1">
+                    <div class="col-2  m-1">
+                         <input id="hobby_name_{{i}}" formControlName="name" >
+                    </div>
+                    <div class="col-2 m-1">
+                         <input formControlName="address" >
+                    </div>
+                    <div class="col-2 m-1">
+                         <input formControlName="quantity" >
+                    </div>
+                    <div class="col-2 m-1">
+                        <input formControlName="age" >
+                   </div>
+                   <div class="col-2 m-1">
+                        <input formControlName="birthYear" >
+                   </div>
+                    <div class="col-2 m-1">                       
+                            <button type="button" class="btn btn-secondary" [style.max-width.px]="120" (click)="deleteSeller(i)">Delete Seller</button>
+                    </div>
+                    <br/>          
+                    <!-- FormGroupon megyünk végig !!                                                                          -->
+                    <!-- {{sellers[i].get("age")?.value}}        
+                    {{sellers[i]?.errors?.ageAndYear.message}} -->
+                </div>
+
+                <div class="row">
+                    <span class="invalid col-12" *ngIf="sellers[i]?.errors"> {{sellers[i]?.errors?.ageAndYear.message}}</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <button type="submit" class="btn btn-primary m-1"  [style.max-width.px]="180" [disabled]="bookForm.invalid">Submit</button>
+            <button type="button" class="btn btn-primary m-1"  [style.max-width.px]="180" routerLink="/book/list">Back</button>
+        </div>
+
+    </form>
+
+
+
+</div>
