@@ -12,27 +12,31 @@
             <div class="p-field">
                 <label for="firstname" class="p-ml-2 ">ISBN:</label>
                 <div class="p-ml-2 ">
-                    <input pInputText type="text" formControlName="title" >
+                    <input pInputText type="text" formControlName="isbn" >
                 </div>
             </div>
+            
             <div class="p-field">
                 <label for="lastname" class="p-ml-2  ">Title:</label>
                 <div class="p-ml-2 ">
-                    <input pInputText type="text" formControlName="isbn"  #isbnCtrl>
+                    <input pInputText type="text" formControlName="title"  #isbnCtrl>
                 </div>
             </div>
+            
             <div class="p-field">
                 <label for="lastname" class="p-ml-2  ">Subtitle:</label>
                 <div class="p-ml-2 ">
                     <input pInputText type="text" formControlName="subtitle"  #isbnCtrl>
                 </div>
             </div>
+            
             <div class="p-field">
                 <label for="lastname" class="p-ml-2">Rating:</label>
                 <div class="p-ml-2 ">
                     <input pInputText type="text" formControlName="rating"  #isbnCtrl>
                 </div>
             </div>
+          
             <div class="p-field">
                 <button pButton type="button" class="p-button-outlined p-ml-2"  [style.max-width.px]="180"  (click)="addAuthor()">Add new Author</button>
             </div>
