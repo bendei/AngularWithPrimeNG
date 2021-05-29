@@ -1,11 +1,11 @@
 <br/>
 <div class="p-grid">
 
-    <div class="p-col-12">
-        <div>Book details</div>
+    <div class="p-col-12 p-ml-2">
+        <h3>Book details</h3>
     </div>
 
-    <div class="p-col-6">
+    <div class="p-col-8">
         <div class="p-fluid">
             <form class="form" [formGroup]="bookForm" (ngSubmit)="submitForm()">
         
@@ -70,8 +70,43 @@
                             &nbsp;
                         </div>           
                     </div>  
-                </div>
+                </div>  
+            </div>
+              
+            <div class="p-field p-ml-2">
+               
+                <div class="p-grid" formArrayName="sellers" *ngFor="let seller of sellers; let i = index;">   <!--  nem biztos hogy a jsonban van ilyen property -->
+                    <div [formGroupName]="i" class="p-grid p-mb-2">
+                        <div class="p-col">
+                            <input pInputText id="hobby_name_{{i}}" formControlName="name" >
+                        </div>
+                        <div class="p-col">
+                            <input pInputText formControlName="address" >
+                        </div>
+                        <div class="p-col">
+                            <input pInputText formControlName="quantity" >
+                        </div>
+                        <div class="p-col">
+                            <input pInputText formControlName="age" >
+                        </div>
+                        <div class="p-col">
+                            <input pInputText formControlName="birthYear" >
+                        </div>
+                        <div class="p-col">
+                            <button type="button" class="p-button-outlined p-ml-2" pButton [style.max-width.px]="200" (click)="deleteSeller(i)">Delete Seller</button>
+                        </div>   
+                        <div class="p-col">
+                            <span class="invalid p-col-12" *ngIf="sellers[i]?.errors"> {{sellers[i]?.errors?.ageAndYear.message}}</span>
+                        </div>  
+                </div>               
 
+            </div>  
+               
+            </div>
+            
+            <div class="p-field">
+                <button pButton type="submit" class="p-mr-2"  [style.max-width.px]="180" [disabled]="bookForm.invalid" label="Submit"></button>
+                <button pButton type="button" class=""  [style.max-width.px]="180" routerLink="/book/list" label="Back"></button>
             </div>
 
 
