@@ -42,6 +42,37 @@
                 <input pInputText type="text" style="width:200px;" *ngFor="let a of authors; index as i" [formControlName]="i" class="p-ml-2 p-mb-2 ">
             </div>           
    
+            <div class="p-field">
+                <button pButton type="button" class="p-button-outlined p-ml-2"  [style.max-width.px]="180"  (click)="addSeller()">Add new Seller</button>
+            </div>
+
+            <div class="p-field p-ml-2">
+               
+                <div *ngIf="book?.sellers">
+                    <!-- Fejléc -->
+                    <div class="p-grid" >   <!--  nem biztos hogy a jsonban van ilyen property -->
+                        <div class="p-col">
+                            Name
+                        </div>
+                        <div class="p-col">
+                            Address
+                        </div>
+                        <div class="p-col">
+                            Quantity
+                        </div>
+                        <div class="p-col">
+                            Age
+                        </div>
+                        <div class="p-col">
+                            BirthYear
+                        </div>
+                        <div class="p-col">
+                            &nbsp;
+                        </div>           
+                    </div>  
+                </div>
+
+            </div>
 
 
             </form>
