@@ -10,30 +10,37 @@
             <form class="form" [formGroup]="bookForm" (ngSubmit)="submitForm()">
         
             <div class="p-field">
-                <label for="firstname" class="p-ml-2 ">ISBN:</label>
+                <label class="p-ml-2 ">ISBN:</label>
                 <div class="p-ml-2 ">
                     <input pInputText type="text" formControlName="isbn" >
                 </div>
             </div>
             
             <div class="p-field">
-                <label for="lastname" class="p-ml-2  ">Title:</label>
+                <label class="p-ml-2  ">Title:</label>
                 <div class="p-ml-2 ">
-                    <input pInputText type="text" formControlName="title"  #isbnCtrl>
+                    <input pInputText type="text" formControlName="title">
                 </div>
             </div>
             
             <div class="p-field">
-                <label for="lastname" class="p-ml-2  ">Subtitle:</label>
+                <label class="p-ml-2  ">Subtitle:</label>
                 <div class="p-ml-2 ">
-                    <input pInputText type="text" formControlName="subtitle"  #isbnCtrl>
+                    <input pInputText type="text" formControlName="subtitle">
                 </div>
             </div>
             
             <div class="p-field">
-                <label for="lastname" class="p-ml-2">Rating:</label>
+                <label class="p-ml-2">Rating:</label>
                 <div class="p-ml-2 ">
-                    <input pInputText type="text" formControlName="rating"  #isbnCtrl>
+                    <input pInputText type="text" formControlName="rating">
+                </div>
+            </div>
+
+            <div class="p-field" style="width: 150px;">
+                <label class="p-ml-2">Pbulished date:</label>
+                 <div class="p-ml-2 "> <!--a style nélkül a dropdown alol áttunt a button -->
+                   <p-calendar  [style]="{'position': 'auto', 'overflow': 'visible', 'z-index': '999'}" formControlName="publishedDate" dateFormat="yy-m-d"></p-calendar>
                 </div>
             </div>
           
@@ -120,3 +127,4 @@
     </div>
 
 </div>
+

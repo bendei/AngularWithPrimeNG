@@ -7,6 +7,8 @@ export interface Book {
     authors: string[];
     sellers: BookSeller[];
     published: Date;
+    publishedDate: Date;
+    publishedTime: Date;
     subtitle?: string;
     rating?: number;
     thumbnails?: Thumbnail[];

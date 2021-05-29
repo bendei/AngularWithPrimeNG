@@ -32,7 +32,7 @@ module.exports = function () {
                     ],
                 title: "Angular 11", 
                 authors: ['Ferdinand Malcher', 'Johannes Hoppe', 'Danny Koppenhagen'], 
-                published: new Date(2020, 8, 1), subtitle: 'Grundlagen, fortgeschrittene Themen und Best Practices', rating: 5,
+                published:  new Date().toISOString(), subtitle: 'Grundlagen, fortgeschrittene Themen und Best Practices', rating: 5,
                 thumbnails: [{
                     url: 'https://ng-buch.de/angular-cover.jpg', title: 'Buchcover' }],
                 description: 'Lernen Sie Angular mit diesem Praxisbuch!'
@@ -41,7 +41,7 @@ module.exports = function () {
                 isbn: 554543654, 
                 title: "React", 
                 authors: ['Oliver Zeigermann', 'Nils Hartmann'], 
-                published: new Date(2019, 11, 12), 
+                published:  new Date().toISOString(), 
                 subtitle: 'Grundlagen, fortgeschrittene Themen, Praxistipps', rating: 4,
                 thumbnails: [{
                     url: 'https://ng-buch.de/react-cover.jpg', title: 'Buchcover' }],

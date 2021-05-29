@@ -8,9 +8,10 @@ import { HttpClientModule } from '@angular/common/http';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from "primeng/button";
 import {TableModule} from 'primeng/table';
+import {CalendarModule} from 'primeng/calendar';
 
 const modulesToExport = [CommonModule, FormsModule, RouterModule, ReactiveFormsModule, HttpClientModule];
-const primeModules = [InputTextModule, ButtonModule, TableModule];
+const primeModules = [InputTextModule, ButtonModule, TableModule, CalendarModule];
 
 @NgModule({
   imports: [...modulesToExport, ...primeModules],
