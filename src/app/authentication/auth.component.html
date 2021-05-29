@@ -1,27 +1,37 @@
-<div class="container-fluid">
 
-    <div class="row">
-        <div class="col bg-dark text-white">SPORTS STORE</div>
+<div class="p-grid">
+
+    <div class="p-col-12">
+        <div>SPORTS STORE</div>
     </div>
 
-    <div class="row">
+    <div class="p-col-12">
         <div *ngIf="errorMsg != null" class="text-danger">{{errorMsg}}</div>
     </div>
 
-    <form #form="ngForm" novalidate (ngSubmit)="authenticate(form)">
-        <div class="form-group">
-            <label>Username</label>
-             <input tabindex = "0" class="form-control" name="username" [(ngModel)]="username" required />
-        </div>
+    <div class="p-col-6">
+        <div class="p-fluid">
+            <form #form="ngForm" novalidate (ngSubmit)="authenticate(form)">
+            <div class="p-field">
+                <label for="firstname" class="p-ml-2 ">Firstname</label>
+                <div class="p-ml-2 ">
+                    <input pInputText tabindex = "0" class="form-control" name="username" [(ngModel)]="username" required />
+                </div>
+            </div>
+            <div class="p-field">
+                <label for="lastname" class="p-ml-2  ">Lastname</label>
+                <div class="p-ml-2 ">
+                    <input pInputText  class="form-control" name="password" [(ngModel)]="password" required/>
+                </div>
+            </div>
+            <div class="p-field">
+                <div class="p-ml-2 p-mx-auto" style="width: 150px;">
+                    <button pButton type="submit" label="Login"></button>
+                </div>
+            </div>
 
-        <div class="form-group">
-            <label>Password</label>
-            <input class="form-control" name="password" [(ngModel)]="password" required/>
+        </form>
         </div>
-
-        <div class="text-center">
-            <button class="btn btn-primary m-1" type="submit">Login</button>
-          </div>
-    </form>
+    </div>
 
 </div>

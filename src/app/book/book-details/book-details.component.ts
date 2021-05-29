@@ -6,8 +6,6 @@ import {BookRepository} from "../shared/book.repository";
 import { Book, BookSeller } from '../shared/book';
 import {BookValidator} from "../../validators/BookValidator";
 import { NGXLogger } from 'ngx-logger';
-import {
-  InputText} from 'primeng/inputtext';
  
 @Component({
   selector: 'app-book-details',

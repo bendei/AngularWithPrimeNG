@@ -4,11 +4,17 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
+// primeeng
+import {InputTextModule} from 'primeng/inputtext';
+import {ButtonModule} from "primeng/button";
+import {TableModule} from 'primeng/table';
+
 const modulesToExport = [CommonModule, FormsModule, RouterModule, ReactiveFormsModule, HttpClientModule];
+const primeModules = [InputTextModule, ButtonModule, TableModule];
 
 @NgModule({
-  imports: [...modulesToExport],
-  exports: [...modulesToExport ]
+  imports: [...modulesToExport, ...primeModules],
+  exports: [...modulesToExport,  ...primeModules ]
 })
 export class SharedModule { }
 
