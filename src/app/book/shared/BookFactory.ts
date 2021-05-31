@@ -3,17 +3,25 @@ import {Book} from "../shared/book";
 export class BookFactory {
 
     static convertBook(rawBook: Book): Book {
-        let datum = new Date(rawBook.published);
-        console.log("datum:",datum);
-        console.log("ezeze:", datum.getFullYear());
-        console.log("ezeze:", datum.getMonth());
-        console.log("ezeze:", datum.getDate());
 
+        // mert lehet hogy nincsen published datum a jsonban
+        let datum: Date;
+        let publishedDate: Date;
+
+        if (rawBook.published) {
+            datum = new Date(rawBook.published);
+            publishedDate =  new Date(datum.getFullYear(), datum.getMonth(), datum.getDate());
+
+        }
+
+        console.log("json datum:", datum);
+        console.log("json publishedDate:", publishedDate);
+        //console.log("json publishedTime:", rawBook.published);
+        
         return {
             ...rawBook,
-            //published: new Date(rawBook.published),
-            published: new Date(datum.getFullYear(), datum.getMonth(), datum.getDate()),
-            publishedDate: new Date(datum.getFullYear(), datum.getMonth(), datum.getDate()),
+            published: datum,
+            publishedDate: publishedDate,
             //publishedTime: new Date(datum.getFullYear(), datum.getMonth(), datum.getDate(), datum.getHours(), datum.getMinutes(), datum.getMilliseconds())
         };
     }

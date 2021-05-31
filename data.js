@@ -32,7 +32,7 @@ module.exports = function () {
                     ],
                 title: "Angular 11", 
                 authors: ['Ferdinand Malcher', 'Johannes Hoppe', 'Danny Koppenhagen'], 
-                published:  new Date().toISOString(), subtitle: 'Grundlagen, fortgeschrittene Themen und Best Practices', rating: 5,
+                published:  null, subtitle: 'Grundlagen, fortgeschrittene Themen und Best Practices', rating: 5,
                 thumbnails: [{
                     url: 'https://ng-buch.de/angular-cover.jpg', title: 'Buchcover' }],
                 description: 'Lernen Sie Angular mit diesem Praxisbuch!'

@@ -16,23 +16,3 @@
   </app>
 </body>
 </html>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-      alert("ready");
-     var wrapper = $(document.body).children('.layout-wrapper'),
-     topbar = wrapper.children('.topbar');
-
-     if(wrapper.hasClass('menu-layout-overlay')) {                  
-         topbar.css('z-index', '100');
-         $('#menu-button').on('click', function() {
-              if(wrapper.hasClass('layout-menu-overlay-active')) {
-                 topbar.css('z-index', '');
-              }
-              else {
-                 topbar.css('z-index', '100');
-              }
-         });
-     }
-  });
-</script>

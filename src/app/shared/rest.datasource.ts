@@ -56,6 +56,7 @@ export class RestDataSource {
     getBook(id: string): Observable<Book> {
         return this.http.get<Book>(`${api}/books/${id}`).pipe(
             retry(3),
+            map(book => BookFactory.convertBook(book)),
             catchError((err: Response) => throwError(` http status code: ${err.status} - ${err.statusText} - ${err.url}`) )
         );
     }

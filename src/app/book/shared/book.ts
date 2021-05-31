@@ -6,9 +6,9 @@ export interface Book {
     title: string;
     authors: string[];
     sellers: BookSeller[];
-    published: Date;
-    publishedDate: Date;
-    publishedTime: Date;
+    published?: Date;
+    publishedDate?: Date;
+    publishedTime?: Date;
     subtitle?: string;
     rating?: number;
     thumbnails?: Thumbnail[];

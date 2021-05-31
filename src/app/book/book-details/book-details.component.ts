@@ -18,7 +18,6 @@ export class BookDetailsComponent implements OnInit {
   modes: Modes = Modes.create;
   bookForm: FormGroup;
   book: Book;
-  datum: Date = new Date();
 
   constructor(private router: Router, private activeRoute: ActivatedRoute, private fb: FormBuilder, private bookRepo: BookRepository, private logger: NGXLogger) {
     this.modes = Number(activeRoute.snapshot.paramMap.get("mode"));
@@ -46,7 +45,7 @@ export class BookDetailsComponent implements OnInit {
       title: [book?.title, [Validators.minLength(3), BookValidator.titleFormat]],
       subtitle: [book?.subtitle],
       published: [book?.published],
-      publishedDate: [new Date()],
+      publishedDate: [book?.publishedDate],
       rating: [book?.rating, Validators.minLength(3)],
       //sellers: (book === undefined || book.sellers === undefined )? [] : this.fb.array(this.createSellerGroups(book?.sellers))
       // vagy ugyanez 
@@ -113,14 +112,12 @@ export class BookDetailsComponent implements OnInit {
      const sellers = this.bookForm.value.sellers.filter((seller: BookSeller) => (seller.address != null && seller.name != null && seller.quantity != 0));
      const authors = this.bookForm.value.authors;
 
-console.log("publishedDate:" , this.bookForm.get("publishedDate").value);
-
       const mybook: Book = {
         ...this.bookForm.value,
         id: this.bookForm.get("isbn").value,
         isbn: this.bookForm.get("isbn").value,
-        published: this.bookForm.get("publishedDate").value,
-        publishedDate: this.bookForm.get("publishedDate").value,
+        published: new Date(this.bookForm.get("publishedDate").value).toISOString(), //new Date().toISOString(), //this.bookForm.get("publishedDate").value,
+        publishedDate: new Date(this.bookForm.get("publishedDate").value).toISOString(), //this.bookForm.get("publishedDate").value,
         sellers,
         authors
       };
