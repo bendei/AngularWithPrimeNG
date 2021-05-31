@@ -45,7 +45,7 @@
 	-	stashing: git stash -a  ez a untrackedeket is stashingeli, visszatöltjük a stashedet(legutolsaót) git stash pop
 	- 	remote URL-jet kapjuk: git remote show myremote
 	
-	// Visszaállitás stb:
+	// UNDO COMMIT ON REMOTE,  Visszaállitás az előző commitra stb:
 	-- we have staged but not commited yet and want to unstage: git reset
 	-- ha van egy "1.4" es message commitunk de eltoltuk és vissza akarunk állnio az 1.1 es commitra:
 		A. reset commanddal a 1.4 commitot töröljük és visszaáll a HEAD a 1.1 -re.
