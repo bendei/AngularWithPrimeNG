@@ -116,7 +116,7 @@ export class BookDetailsComponent implements OnInit {
         ...this.bookForm.value,
         id: this.bookForm.get("isbn").value,
         isbn: this.bookForm.get("isbn").value,
-        published: new Date(this.bookForm.get("publishedDate").value).toISOString(), //new Date().toISOString(), //this.bookForm.get("publishedDate").value,
+        published: new Date(this.bookForm.get("published").value).toISOString(), //new Date().toISOString(), //this.bookForm.get("publishedDate").value,
         publishedDate: new Date(this.bookForm.get("publishedDate").value).toISOString(), //this.bookForm.get("publishedDate").value,
         sellers,
         authors

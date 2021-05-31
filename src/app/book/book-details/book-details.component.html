@@ -40,7 +40,14 @@
             <div class="p-field" style="width: 150px;">
                 <label class="p-ml-2">Pulished date:</label>
                  <div class="p-ml-2 "> <!--a style nélkül a dropdown alol áttunt a button -->
-                   <p-calendar  [style]="{'position': 'auto', 'overflow': 'visible', 'z-index': '999'}" formControlName="publishedDate" dateFormat="yy-m-d"></p-calendar>
+                   <p-calendar [style]="{'position': 'auto', 'overflow': 'visible', 'z-index': '999'}" formControlName="publishedDate" dateFormat="yy-m-d"></p-calendar>
+                </div>
+            </div>
+
+            <div class="p-field" style="width: 150px;">
+                <label class="p-ml-2">Pulished dateTime:</label>
+                 <div class="p-ml-2 "> <!--a style nélkül a dropdown alol áttunt a button -->
+                   <p-calendar showTime="true" [style]="{'position': 'auto', 'overflow': 'visible', 'z-index': '999'}" formControlName="published" dateFormat="yy-m-d"></p-calendar>
                 </div>
             </div>
           

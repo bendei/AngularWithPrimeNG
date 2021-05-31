@@ -41,7 +41,6 @@ module.exports = function () {
                 isbn: 554543654, 
                 title: "React", 
                 authors: ['Oliver Zeigermann', 'Nils Hartmann'], 
-                published:  new Date().toISOString(), 
                 subtitle: 'Grundlagen, fortgeschrittene Themen, Praxistipps', rating: 4,
                 thumbnails: [{
                     url: 'https://ng-buch.de/react-cover.jpg', title: 'Buchcover' }],
