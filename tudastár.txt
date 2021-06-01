@@ -155,3 +155,4 @@ Vadi új projektet hozunk létre és azt tesszük fel a remote github-ra.
 4.	VS Codeban: remote hozzáadása: https://github.com/bendei/hero.git, nve legyen: remotehero
 
 a
+aa
