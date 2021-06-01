@@ -108,8 +108,12 @@ B. git pull => hibaüzenet: "There is no tracking information for the current br
 			(use "git merge --abort" to abort the merge)
   Megoldás: ez esetben jobb egég a fájlon->accept all incoming. Save filé. Majd commit, majd:  git merge --abort, majd fetch és status. Ekkor nincsen se conflict se change.
 
-
-If you wish to set tracking information for this branch you can do so with:
+C. git diff tavoli master
+	és a git remote -v:		tavoli  https://github.com/bendei/AngularWithPrimeNG.git (fetch)
+							tavoli  https://github.com/bendei/AngularWithPrimeNG.git (push)
+	HIBA: "fatal: ambiguous argument 'tavoli': unknown revision or path not in the working tree.
+		  Use '--' to separate paths from revisions, like this: 'git <command> [<revision>...] -- [<file>...]' If you wish to set tracking information for this branch you can do so with:"
+	Megoldas: 
 
     git branch --set-upstream-to=myremote/<branch> master"
 
