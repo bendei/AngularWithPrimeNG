@@ -38,8 +38,19 @@
             </div>
 
 
-            <div class="p-field">
-                <div>Date formatted as longDate: {{ bookForm.get("published")?.value | date:"longDate" }}, time:  {{ bookForm.get("published")?.value | date:"shortTime" }}</div>
+            <div class="p-field"> 
+                <span class="p-ml-2 " style="border: 1px;">
+                    <label class="p-ml-2"><code>Local time:</code></label>
+                   {{ bookForm.get("published")?.value | date:"longDate" }}, time:  {{ bookForm.get("published")?.value | date:"shortTime" }}
+                </span>
+                <span class="p-ml-2 ">
+                    <label class="p-ml-2"><code>UTC time (english):</code></label>
+                    {{ bookForm.get("published")?.value | date: "longDate":"UTC":"en_EN"}}, time:  {{ bookForm.get("published")?.value | date:"shortTime":"UTC":"en_EN" }}
+                 </span>
+                 <span class="p-ml-2 ">
+                    <label class="p-ml-2"><code>Moscow time (russian):</code></label>
+                    {{ bookForm.get("published")?.value | date: "longDate":"UTC":"ru_RU"}}, time:  {{ bookForm.get("published")?.value | date:"shortTime":"UTC":"ru_RU" }}
+                </span>
             </div>
 
             <div class="p-field" style="width: 150px;">
