@@ -46,8 +46,8 @@
 	- 	remote URL-jet kapjuk: git remote show myremote
 	
 	// UNDO COMMIT ON REMOTE,  Visszaállitás az előző commitra stb:
-	-- we have staged but not commited yet and want to unstage: git reset
-	-- ha van egy "1.4" es message commitunk de eltoltuk és vissza akarunk állnio az 1.1 es commitra:
+	1. we have staged but not commited yet and want to unstage: git reset
+	2. ha van egy "1.4" es message commitunk de eltoltuk és vissza akarunk állnio az 1.1 es commitra:
 		A. reset commanddal a 1.4 commitot töröljük és visszaáll a HEAD a 1.1 -re.
 			a. git log --oneline  -> ezzel kilistázzuk a commitok azonosítóját, pl az 1.1 azonositója: bb23
 			b. git reset bb23	-> ezzel töröltük a 1.4 commitot a láncból és visszaállt a HEAD a 1.1-re
@@ -55,6 +55,12 @@
 		B.	revert, amikor az 1.4 commitot nem töröljü, hanem egy új commitot hozunk létre és megmarad a 1.4 is (macerás mert conflict lesz a revertálandó fájlokban amiket kézzel kell feloldani)
 			a. git log --oneline  -> ezzel kilistázzuk a commitok azonosítóját, pl az 1.1 azonositója: bb23
 			b.	sok conflict jön a megváltozott fájlokból, ezeket kézzel kell feloldani, majd add és commit. A commit message lesz az új commit messageje.
+	3.  how to undo changes: ( https://www.earthdatascience.org/workshops/intro-version-control-git/undoing-things/)
+		A: before they’ve been staged (you haven’t used git add yet to add or stage them): git checkout src/app/book/book-details/book-details.component.html , aztán Save All -> discard local Changes
+		B. after they’ve been staged with git add but not commited:
+			git reset HEAD src/app/book/book-details/book-details.component.html  --ezután a fájl még tartalmazza a törölni kivánt változásokat de most unstaged letesztelni
+			igy a fenti "A" esettel visszaállithatjuk.
+		after they’ve been committed to git.
 			
 	-- megnézni hogy a Hotfix branch és a mster branchünk között mi a különbség:( afetch és status nem jó erre)
 		git diff master Hotfix1

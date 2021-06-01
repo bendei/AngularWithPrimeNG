@@ -9,9 +9,10 @@ import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from "primeng/button";
 import {TableModule} from 'primeng/table';
 import {CalendarModule} from 'primeng/calendar';
+import {AutoCompleteModule} from 'primeng/autocomplete';
 
 const modulesToExport = [CommonModule, FormsModule, RouterModule, ReactiveFormsModule, HttpClientModule];
-const primeModules = [InputTextModule, ButtonModule, TableModule, CalendarModule];
+const primeModules = [InputTextModule, ButtonModule, TableModule, CalendarModule, AutoCompleteModule];
 
 @NgModule({
   imports: [...modulesToExport, ...primeModules],

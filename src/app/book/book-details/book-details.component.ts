@@ -18,6 +18,10 @@ export class BookDetailsComponent implements OnInit {
   modes: Modes = Modes.create;
   bookForm: FormGroup;
 
+  // autocomplete
+  searchText: string;
+  searchResults: string[];
+
   constructor(private router: Router, private activeRoute: ActivatedRoute, private fb: FormBuilder, private bookRepo: BookRepository, private logger: NGXLogger) {
     this.modes = Number(activeRoute.snapshot.paramMap.get("mode"));
    }
@@ -129,6 +133,10 @@ export class BookDetailsComponent implements OnInit {
             this.router.navigateByUrl("/book/list"))
       }
     }
+  }
+
+  search(event) {
+    this.searchResults = ["a","aa","aaa"];
   }
     
 }

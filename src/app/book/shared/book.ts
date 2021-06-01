@@ -13,6 +13,7 @@ export interface Book {
     rating?: number;
     thumbnails?: Thumbnail[];
     description?: string;
+    city?: string;
 }
 
 export interface BookSeller {
