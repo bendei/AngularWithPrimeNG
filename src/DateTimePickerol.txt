@@ -1,4 +1,5 @@
 
+
         A RESTből visszajövő json a dátumokat rendszerint nem localizálva hanem az ISO8809 nek megfelelő formátumban adja vissza,
     mely UTC. (a DBben is elvileg UTC kell tárolni). 
         A js new Date() (és valamennyi nem xxxUTCyyy() metódus olyan date objektumot hoz létre, mely a browser local és timezonenak felel meg. )
@@ -11,7 +12,16 @@
          dateString: string = "2020-02-20T00:00:00.000Z";
          dateNumber: number = 1582156800000;
 
-         
+    Dátumok kezelése a component/template-ben:
+        json-ból UTC dátumot kapunk. Mikor ezt a Date js objektumot a templateen a calendar vagy pipe megkapja akkor azt a browser locale-nak megfelelőn jeleniti meg.
+        submit-kor a componentben a dátumot vissza kell convertálnunk UTC-be és majd igy elküldeni a szerverre:  published: new Date(this.bookForm.get("published").value).toISOString(),
+        Minden nyelvet (locale) amit az appban támogatni kívánok külön regisztrálni kell.
+
+    locale: This setting determines the format of dates, times, and curency names/number formats. Hogy a hónapok nevei pl franciául legyenek majd a date pipe-nél kirva a main modulban a francia locale file-template
+        regisztrálni kell: registerLocaleData(localeFr, 'fr'); Azt hogy mi a app default locale-je szintén a main modulban providerként állitom be:  {provide: LOCALE_ID, useValue: "fr_FR"},
+
+
+    timezone: időzóna
 
 
 

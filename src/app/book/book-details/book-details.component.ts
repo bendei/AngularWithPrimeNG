@@ -17,7 +17,6 @@ export class BookDetailsComponent implements OnInit {
   ModesEnum = Modes;  // ez js module és nam angular module ezért nem kell egy ng modulban sem importálni
   modes: Modes = Modes.create;
   bookForm: FormGroup;
-  book: Book;
 
   constructor(private router: Router, private activeRoute: ActivatedRoute, private fb: FormBuilder, private bookRepo: BookRepository, private logger: NGXLogger) {
     this.modes = Number(activeRoute.snapshot.paramMap.get("mode"));
@@ -32,8 +31,7 @@ export class BookDetailsComponent implements OnInit {
       const id = this.activeRoute.snapshot.paramMap.get("id");
       this.bookRepo.getBook(id).subscribe(data =>  {  // a subscription ban kell a formgroupot inicializálni, mert meg kell várni a async REST
                                                      // hivás eredményét
-        this.book = data;
-        this.initForm(this.book);
+        this.initForm(data);
       })
     } 
   }

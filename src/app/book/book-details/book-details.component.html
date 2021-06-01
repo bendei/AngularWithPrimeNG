@@ -82,7 +82,7 @@
 
             <div class="p-field p-ml-2">
                
-                <div *ngIf="book?.sellers">
+                <div *ngIf="sellers">
                     <!-- Fejléc -->
                     <div class="p-grid" >   <!--  nem biztos hogy a jsonban van ilyen property -->
                         <div class="p-col">
@@ -107,7 +107,7 @@
                 </div>  
             </div>
               
-            <div class="p-field p-ml-2">
+            <div class="p-field p-ml-2" *ngIf="sellers">
                
                 <div class="p-grid" formArrayName="sellers" *ngFor="let seller of sellers; let i = index;">   <!--  nem biztos hogy a jsonban van ilyen property -->
                     <div [formGroupName]="i" class="p-grid p-mb-2">

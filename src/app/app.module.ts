@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import {LOCALE_ID} from "@angular/core";
 import localeFr from '@angular/common/locales/fr';
 import localeHu from '@angular/common/locales/hu';
+import localeRu from '@angular/common/locales/ru';
 import { registerLocaleData } from '@angular/common';  
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -29,12 +30,9 @@ import { StoreGuard } from "./authentication/store.guard";
 import { TokenInterceptor} from "../app/shared/token.interceptor";
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 
-// PrimeNG
-import {InputTextModule} from 'primeng/inputtext';
-
-
 registerLocaleData(localeFr, 'fr');
 registerLocaleData(localeHu, 'hu');
+registerLocaleData(localeRu, 'ru');
 
 @NgModule({
   declarations: [

@@ -2,7 +2,7 @@ module.exports = function () {
     return { 
         products: [
             { id: 1, name: "Kayak", category: "Watersports", 
-                description: "A boat for one person", price: 275, releaseDate:  new Date()},    // UTC dátumok
+                description: "A boat for one person", price: 275, releaseDate:  new Date().toISOString()},    // UTC dátumok
             { id: 2, name: "Lifejacket", category: "Watersports", 
                 description: "Protective and fashionable", price: 48.95,  releaseDate:  new Date().toISOString()},
             { id: 3, name: "Soccer Ball", category: "Soccer", 
@@ -32,7 +32,7 @@ module.exports = function () {
                     ],
                 title: "Angular 11", 
                 authors: ['Ferdinand Malcher', 'Johannes Hoppe', 'Danny Koppenhagen'], 
-                published:  null, subtitle: 'Grundlagen, fortgeschrittene Themen und Best Practices', rating: 5,
+                published:  new Date().toISOString(), subtitle: 'Grundlagen, fortgeschrittene Themen und Best Practices', rating: 5,
                 thumbnails: [{
                     url: 'https://ng-buch.de/angular-cover.jpg', title: 'Buchcover' }],
                 description: 'Lernen Sie Angular mit diesem Praxisbuch!'
