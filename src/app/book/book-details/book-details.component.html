@@ -37,6 +37,11 @@
                 </div>
             </div>
 
+
+            <div class="p-field">
+                <div>Date formatted as longDate: {{ bookForm.get("published")?.value | date:"longDate" }}, time:  {{ bookForm.get("published")?.value | date:"shortTime" }}</div>
+            </div>
+
             <div class="p-field" style="width: 150px;">
                 <label class="p-ml-2">Pulished date:</label>
                  <div class="p-ml-2 "> <!--a style nélkül a dropdown alol áttunt a button -->

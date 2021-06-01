@@ -1,0 +1,17 @@
+
+        A RESTből visszajövő json a dátumokat rendszerint nem localizálva hanem az ISO8809 nek megfelelő formátumban adja vissza,
+    mely UTC. (a DBben is elvileg UTC kell tárolni). 
+        A js new Date() (és valamennyi nem xxxUTCyyy() metódus olyan date objektumot hoz létre, mely a browser local és timezonenak felel meg. )
+    A local date-t itt átalakitjuk UTC ISO fomrában a toISOString() gel, igy emuláljuk hogy a API-tól jönnek a dátumok.
+
+    HA viszont nem browserben futo js ben hozzuk létre a Date() akkor UTC időt hoz létre !!!
+
+    Date pipe: a következő formátumokból tud olvasni:
+         dateObject: Date = new Date(2020, 1, 20);
+         dateString: string = "2020-02-20T00:00:00.000Z";
+         dateNumber: number = 1582156800000;
+
+         
+
+
+
