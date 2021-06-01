@@ -113,10 +113,9 @@ C. git diff tavoli master
 							tavoli  https://github.com/bendei/AngularWithPrimeNG.git (push)
 	HIBA: "fatal: ambiguous argument 'tavoli': unknown revision or path not in the working tree.
 		  Use '--' to separate paths from revisions, like this: 'git <command> [<revision>...] -- [<file>...]' If you wish to set tracking information for this branch you can do so with:"
-	Megoldas: 
+	Megoldas: git stash, git pull tavoli/master master, git stash pop, git diff tavoli/master master
 
-    git branch --set-upstream-to=myremote/<branch> master"
-
+   
 -------------------------------
 Új primitiv dir-t egy fájlall akarunk létrehozni és feltolni a remotre:
 0.	A github-on https://github.com/new oldalon létrehozunk egy új repot, ez mots egy üres repo amit meg akarok tölteni már létező tartalommal
