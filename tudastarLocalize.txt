@@ -1,0 +1,5 @@
+1 Vagy statikus local-t használ az app: main modulnam a language file-ket kézzel importáljuk be: registerLocaleData(localeFr, 'fr'); registerLocaleData(localeHu, 'hu');
+    és a localt-t manuálisan "égetjük be" az appba:  {provide: LOCALE_ID, useValue: "fr_FR"},
+
+2. Dinamikusan választható locale: A fentieket kitöröljük a a app.module.ts-ből.
+  
