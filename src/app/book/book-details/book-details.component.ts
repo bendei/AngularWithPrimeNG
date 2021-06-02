@@ -49,6 +49,7 @@ export class BookDetailsComponent implements OnInit {
       published: [book?.published],
       publishedDate: [book?.publishedDate],
       rating: [book?.rating, Validators.minLength(3)],
+      city: [book?.city],
       //sellers: (book === undefined || book.sellers === undefined )? [] : this.fb.array(this.createSellerGroups(book?.sellers))
       // vagy ugyanez 
       sellers: this.fb.array( (!book || !book?.sellers) ? [] : this.createSellerArray(book.sellers), {validators: BookValidator.ageAndYearCorrect} ), // array of FormGroups containing FormControll objects
@@ -136,7 +137,7 @@ export class BookDetailsComponent implements OnInit {
   }
 
   search(event) {
-    this.searchResults = ["a","aa","aaa"];
+    this.bookRepo.getCountries(event.query).subscribe(x => this.searchResults = x)
   }
     
 }

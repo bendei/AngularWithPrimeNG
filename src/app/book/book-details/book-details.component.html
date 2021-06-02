@@ -66,6 +66,14 @@
                    <p-calendar showTime="true" [style]="{'position': 'auto', 'overflow': 'visible', 'z-index': '999'}" formControlName="published" dateFormat="yy-m-d"></p-calendar>
                 </div>
             </div>
+
+            <div class="p-field">
+                <label class="p-ml-2">Country selection with autocomplete ( REST ) </label>
+                 <div class="p-ml-2 "> <!--a style nélkül a dropdown alol áttunt a button -->
+                    <p-autoComplete formControlName="city" [suggestions]="searchResults" (completeMethod)="search($event)" [dropdown]="true"
+                    ></p-autoComplete>
+                </div>
+            </div>
           
             <div class="p-field">
                 <button pButton type="button" class="p-button-outlined p-ml-2"  [style.max-width.px]="180"  (click)="addAuthor()">Add new Author</button>

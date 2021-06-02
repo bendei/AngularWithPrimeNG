@@ -160,6 +160,14 @@ export class RestDataSource {
         );
     }
 
+    // autocomplete
+    getCountries(search: string): Observable<string[]> {
+        return this.http.get<string[]>(`${api}/countries/${search}`).pipe(
+            retry(3),
+            catchError((err: Response) => throwError(` http status code: ${err.status} - ${err.statusText} - ${err.url}`) )
+        );
+    }
+
     authenticate(name: string, pw: string): Observable<boolean> {
         return this.http.post<any>(`${api}/login`, {
             name: name, password: pw

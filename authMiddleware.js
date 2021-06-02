@@ -4,8 +4,10 @@ const APP_SECRET = "myappsecret";
 const USERNAME = "a";
 const PASSWORD = "a";
 
+const countries = ["Afghanistan","Andorra","Alabama","Belgium","Bhutan","Belaruss"]
+
 const mappings = {
-    get: ["/api/orders", "/orders","/api/products","/products", "/books", "/api/books"],
+    get: ["/api/orders", "/orders","/api/products","/products", "/books", "/api/books", "/api/countries", "/countries"],
     post: ["/api/products", "/products", "/api/categories", "/categories", "/api/logs", "/logs"],
     delete: ["/api/products","/api/products"],
     put: ["/api/products","/products", "/api/orders", "/orders"],
@@ -23,8 +25,17 @@ module.exports = function (req, res, next) {
     if (req.url.endsWith("/logs") && req.method == "POST") {
         console.log("Logging received from Angular:");
         console.log(req.body);
+        res.end();
+        return;
     }
-
+    else if(req.url.includes("/countries")) {
+        let ind = req.url.lastIndexOf("/");
+        let text = req.url.substring(++ind);
+        let co = countries.filter(x => x.toLowerCase().startsWith(text.toLowerCase()));
+        res.json(co);
+        res.end();
+        return;
+    }
     else if (req.url.endsWith("/login") && req.method == "POST") {
         if (req.body && req.body.name == USERNAME && req.body.password == PASSWORD) {
             let token = jwt.sign({ data: USERNAME, expiresIn: "1h" }, APP_SECRET);

@@ -28,6 +28,10 @@ export class BookRepository {
 
     deleteBook(isbn: string): Observable<any> {
         return this.ds.deleteBook(isbn);
+    } 
+
+    getCountries(text: string): Observable<string[]> {
+        return this.ds.getCountries(text);
     }
 
 }
