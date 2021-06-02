@@ -47,7 +47,7 @@ registerLocaleData(localeRu, 'ru');
     LoggerModule.forRoot({serverLoggingUrl: 'http://localhost:3500/api/logs', level: NgxLoggerLevel.DEBUG, serverLogLevel: NgxLoggerLevel.ERROR}),
   ],
   providers: [StoreGuard, 
-    {provide: LOCALE_ID, useValue: "hu_HU"},
+    {provide: LOCALE_ID, useValue: "fr_FR"},  // beégettük az app locale-ját
     {provide: ErrorHandler, useClass: AppErrorHandler},  // custom error handling
     {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true} // token interceptior
      
