@@ -5,6 +5,13 @@
   "projects": {
     "SportStoreAngular10": {
       "projectType": "application",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+        "de": "messages.de.xmb",
+        "fr": "messages.hu.xmb"
+        }
+      },
       "schematics": {
         "@schematics/angular:class": {
           "skipTests": true
@@ -44,6 +51,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
+            "localize": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -94,6 +102,7 @@
               "extractCss": true,
               "namedChunks": false,
               "aot": true,
+              "localize": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
