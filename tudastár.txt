@@ -44,6 +44,7 @@
 	-   comparing files in two branches: git diff branch1 branch2 elso.txt
 	-	stashing: git stash -a  ez a untrackedeket is stashingeli, visszatöltjük a stashedet(legutolsaót) git stash pop
 	- 	remote URL-jet kapjuk: git remote show myremote
+	-   deleting remote branch: (Internat a törölni kívánt brnach , remote meg a tavoli): git push tavoli --delete Internat
 	
 	// UNDO COMMIT ON REMOTE,  Visszaállitás az előző commitra stb:
 	1. we have staged but not commited yet and want to unstage: git reset
