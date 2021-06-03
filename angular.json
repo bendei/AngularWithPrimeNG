@@ -133,13 +133,7 @@
               "localize": ["hu"],
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.ts"
-                }
-              ]
+              "buildOptimizer": true
             },
             "dev-de": {
               "optimization": true,
@@ -149,13 +143,7 @@
               "localize": ["de"],
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.ts"
-                }
-              ]
+              "buildOptimizer": true
             }, 
             "dev-en": {
               "optimization": true,
@@ -165,13 +153,7 @@
               "localize": ["en"],
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.ts"
-                }
-              ]
+              "buildOptimizer": true
             }
           }
         },

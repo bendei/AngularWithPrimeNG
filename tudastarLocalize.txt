@@ -35,11 +35,10 @@ https://stackoverflow.com/questions/60855458/how-use-xmb-translate-files-on-angu
    1. ng extract-i18n , minden új lacalizált text felvitelekor a html -ben le kell ezt futtatnunk, hogy a resource bundle (xlf) fájl frissüljön.
    2. Ha van de és hu xlf file akkor azokat is kézzel kell updatelni.
 
-
+ebben a felállásban minden localehoz külön build készült, amit igy futtathatunk: git serve --open --configuration=dev-hu
   
 
     ng build : ez valamennyi locale -al egy új app-ot buidlel le.
 
-    HIBA : An unhandled exception occurred: Unsupported translation file format in D:\Angular\AngPrime\SportStoreAngular10-primeng\messages.de.xmb. 
-    Megoldas: 
+   
 
