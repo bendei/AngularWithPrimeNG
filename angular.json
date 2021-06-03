@@ -5,6 +5,14 @@
   "projects": {
     "SportStoreAngular10": {
       "projectType": "application",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+        "de": "messages.de.xlf",  
+        "hu": "messages.hu.xlf",
+        "en": "messages.xlf"
+        }
+      },
       "schematics": {
         "@schematics/angular:class": {
           "skipTests": true
@@ -44,6 +52,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
+            "localize": false,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -68,7 +77,7 @@
               ],
               "optimization": true,
               "outputHashing": "all",
-              "sourceMap": true,
+              "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
@@ -87,33 +96,84 @@
                 }
               ]
             },
-            "dev": {
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": true,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
+            "production-hu": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.dev.ts"
+                  "with": "src/environments/environment.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "localize": ["hu"],
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ]
+            },
+            "dev": {
+              "optimization": true,
+              "sourceMap": true,
+              "namedChunks": false,
+              "aot": true,
+              "localize": ["hu"],
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            },
+            "dev-de": {
+              "optimization": true,
+              "sourceMap": true,
+              "namedChunks": false,
+              "aot": true,
+              "localize": ["de"],
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }, 
+            "dev-en": {
+              "optimization": true,
+              "sourceMap": true,
+              "namedChunks": false,
+              "aot": true,
+              "localize": ["en"],
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
             }
           }
         },
-        "serve": {
+        "serve": { 
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "SportStoreAngular10:build"
           },
           "configurations": {
             "production": {
+              "browserTarget": "SportStoreAngular10:build:production-hu"
+            },
+            "dev-hu": {
               "browserTarget": "SportStoreAngular10:build:dev"
+            },
+            "dev-de": {
+              "browserTarget": "SportStoreAngular10:build:dev-de"
+            },
+            "dev-en": {
+              "browserTarget": "SportStoreAngular10:build:dev-en"
             }
           }
         },

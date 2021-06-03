@@ -1,5 +1,44 @@
+
+https://lokalise.com/blog/angular-i18n/
+https://stackoverflow.com/questions/60855458/how-use-xmb-translate-files-on-angular-9
+
+
 1 Vagy statikus local-t használ az app: main modulnam a language file-ket kézzel importáljuk be: registerLocaleData(localeFr, 'fr'); registerLocaleData(localeHu, 'hu');
     és a localt-t manuálisan "égetjük be" az appba:  {provide: LOCALE_ID, useValue: "fr_FR"},
 
-2. Dinamikusan választható locale: A fentieket kitöröljük a a app.module.ts-ből.
+2. Több locale támogatása ,
+  Az app több localt is támogat, de mindegyikre külön buildet hoz létre. Az app indításakor a locale: ["hu"] (angular.json) indul el. Ez nem túl kedvező, mert a user nem választhatja az nyelvet 
+  kedve szerint.
   
+  Kezdeti beállitasok: 
+   A fentieket kitöröljük a a app.module.ts-ből.
+      angular.json:
+          "i18n": {
+              "sourceLocale": "en-US",
+              "locales": {
+              "de": "messages.de.xmb",
+              "fr": "messages.hu.xmb"
+              }
+            },
+
+          és még:
+              "architect": {
+                  "build": {
+                  "options": {
+                  // ...
+                  "aot": true,
+                  "localize": ["hu"]
+                    
+
+    ng add @angular/localize : locale csomag installálása
+
+   1. ng extract-i18n , minden új lacalizált text felvitelekor a html -ben le kell ezt futtatnunk, hogy a resource bundle (xlf) fájl frissüljön.
+   2. Ha van de és hu xlf file akkor azokat is kézzel kell updatelni.
+
+ebben a felállásban minden localehoz külön build készült, amit igy futtathatunk: git serve --open --configuration=dev-hu
+  
+
+    ng build : ez valamennyi locale -al egy új app-ot buidlel le.
+
+   
+

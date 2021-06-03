@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "b5193241-3fda-4a97-bbd3-ae63df87f04c",
+		"name": "Angular 10 ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"a\",\r\n    \"password\":\"a\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3500/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProducts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer<eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYSIsImV4cGlyZXNJbiI6IjFoIiwiaWF0IjoxNjIwNzQ3NjEwfQ.oBw7-Cgnv4hoXhSm9pnxHxe4cvmZvpXON6qkCGmdfjc>",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3500/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProduct",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer<eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYSIsImV4cGlyZXNJbiI6IjFoIiwiaWF0IjoxNjIwNzQ3NjEwfQ.oBw7-Cgnv4hoXhSm9pnxHxe4cvmZvpXON6qkCGmdfjc>",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3500/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBooks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer<eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYSIsImV4cGlyZXNJbiI6IjFoIiwiaWF0IjoxNjIwNzQ3NjEwfQ.oBw7-Cgnv4hoXhSm9pnxHxe4cvmZvpXON6qkCGmdfjc>",
+						"type": "text"
+					},
+					{
+						"key": "Conent-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3500/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBook",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer<eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYSIsImV4cGlyZXNJbiI6IjFoIiwiaWF0IjoxNjIwNzQ3NjEwfQ.oBw7-Cgnv4hoXhSm9pnxHxe4cvmZvpXON6qkCGmdfjc>",
+						"type": "text"
+					},
+					{
+						"key": "Conent-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3500/books/34324233",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"books",
+						"34324233"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateBook",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer<eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYSIsImV4cGlyZXNJbiI6IjFoIiwiaWF0IjoxNjIwODA3NzU1fQ.uhodqZMkJ9KM6xLLKdh5Wwcm6hH7aGfvDgua_kA5z1E>",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 34324233,\r\n  \"isbn\": 34324233,\r\n  \"title\": \"Angular 11\",\r\n  \"authors\": [\r\n    \"Ferdinand Malcher\",\r\n    \"Johannes Hoppe\",\r\n    \"Danny Koppenhagen\"\r\n  ],\r\n  \"published\": \"2020-08-31T22:00:00.000Z\",\r\n  \"subtitle\": \"Grundlagen, fortgeschrittene Themen und Best Practices\",\r\n  \"rating\": 5,\r\n  \"thumbnails\": [\r\n    {\r\n      \"url\": \"https://ng-buch.de/angular-cover.jpg\",\r\n      \"title\": \"Buchcover\"\r\n    }\r\n  ],\r\n  \"description\": \"Lernen Sie Angular mit diesem Praxisbuch!\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3500/books/34324233",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"books",
+						"34324233"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProduct",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer<eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYSIsImV4cGlyZXNJbiI6IjFoIiwiaWF0IjoxNjIwODA4MTg3fQ.Ql5k5c3HhmHkxlcenqC0JC8260ydY6vE3uALOtUQAvI>",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Kayak 1\",\r\n    \"category\": \"Watersports\",\r\n    \"description\": \"A boat for one person\",\r\n    \"price\": 275,\r\n    \"releaseDate\": \"2021-05-12T08:29:43.779Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3500/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createBook",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer<eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYSIsImV4cGlyZXNJbiI6IjFoIiwiaWF0IjoxNjIwODIzODUwfQ.qkg3zhsWK1owQCG8pMTFjIrwiAVq98Vsd9oHXrAQOak>",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1111,\r\n    \"isbn\": 1111,\r\n    \"title\": \"Angul\",\r\n    \"subtitle\": \"Grundlagen, fortgeschrittene Themen und Best Practices\",\r\n    \"rating\": 5,\r\n    \"description\": \"Lernen Sie Angular mit diesem Praxisbuch!\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3500/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "log",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer<eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYSIsImV4cGlyZXNJbiI6IjFoIiwiaWF0IjoxNjIyMDM3NjI0fQ.UUfaDqI74mM5lIeJIUgFdJ6OdTTojft6YCVpf133UCk>",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"message\": \"logging\", \"additional\": [], \"level\": 5, \"timestamp\": \"2021-05-26T13:59:40.910Z\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3500/logs",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"logs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCountries",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer<eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYSIsImV4cGlyZXNJbiI6IjFoIiwiaWF0IjoxNjIyNjA5MDU0fQ.HMsLmy4gfPzaMJZgIlvoAlSWqpKK8SybUF_TgmRYUYA>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3500/countries/a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"countries",
+						"a"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

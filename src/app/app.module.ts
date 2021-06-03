@@ -30,9 +30,9 @@ import { StoreGuard } from "./authentication/store.guard";
 import { TokenInterceptor} from "../app/shared/token.interceptor";
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 
-registerLocaleData(localeFr, 'fr');
-registerLocaleData(localeHu, 'hu');
-registerLocaleData(localeRu, 'ru');
+// registerLocaleData(localeFr, 'fr');
+// registerLocaleData(localeHu, 'hu');
+// registerLocaleData(localeRu, 'ru');
 
 @NgModule({
   declarations: [
@@ -47,7 +47,7 @@ registerLocaleData(localeRu, 'ru');
     LoggerModule.forRoot({serverLoggingUrl: 'http://localhost:3500/api/logs', level: NgxLoggerLevel.DEBUG, serverLogLevel: NgxLoggerLevel.ERROR}),
   ],
   providers: [StoreGuard, 
-    {provide: LOCALE_ID, useValue: "fr_FR"},  // beégettük az app locale-ját
+   // {provide: LOCALE_ID, useValue: "fr_FR"},  // beégettük az app locale-ját
     {provide: ErrorHandler, useClass: AppErrorHandler},  // custom error handling
     {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true} // token interceptior
      
