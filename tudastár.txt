@@ -44,6 +44,9 @@
 	-   comparing files in two branches: git diff branch1 branch2 elso.txt
 	-	stashing: git stash -a  ez a untrackedeket is stashingeli, visszatöltjük a stashedet(legutolsaót) git stash pop
 	- 	remote URL-jet kapjuk: git remote show myremote
+	-	Details of a specific commit:
+			git log: kiválasztjuk a hash-jét a keresendő commitnak (pl: eafa6843c723f9ae02bd5367ec08f96e8fed5aac)
+			git show eafa6843c723f9ae02bd5367ec08f96e8fed5aac
 	
 	// UNDO COMMIT ON REMOTE,  Visszaállitás az előző commitra stb:
 	1. we have staged but not commited yet and want to unstage: git reset
@@ -61,6 +64,7 @@
 			git reset HEAD src/app/book/book-details/book-details.component.html  --ezután a fájl még tartalmazza a törölni kivánt változásokat de most unstaged letesztelni
 			igy a fenti "A" esettel visszaállithatjuk.
 		C. after they’ve been committed to git:
+	4. Deleting files wich are commited: git rm messages.de.xmb, és aztán commit a changeseket
 
 			
 	-- megnézni hogy a Hotfix branch és a mster branchünk között mi a különbség:( afetch és status nem jó erre)
