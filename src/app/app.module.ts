@@ -30,9 +30,9 @@ import { StoreGuard } from "./authentication/store.guard";
 import { TokenInterceptor} from "../app/shared/token.interceptor";
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 
-// registerLocaleData(localeFr, 'fr');
-// registerLocaleData(localeHu, 'hu');
-// registerLocaleData(localeRu, 'ru');
+registerLocaleData(localeFr, 'fr');
+registerLocaleData(localeHu, 'hu');
+registerLocaleData(localeRu, 'ru');
 
 @NgModule({
   declarations: [
